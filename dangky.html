@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <style>
+        .outer-container {
+            position: relative;
+            width: 450px; /* Đặt chiều rộng của khung bao ngoài */
+            height: 500px;
+            background-color: #fff; /* Nền trắng cho khung bao ngoài */
+            border: 2px solid #00f; /* Đặt màu viền khung bao ngoài */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tạo bóng cho khung */
+            padding: 20px; /* Thêm khoảng cách đều bên trong khung ngoài */
+            box-sizing: border-box;
+            margin: 0 auto; /* Căn giữa khung trên trang */
+        }
+
+        .outer-container::before {
+            content: "ĐĂNG KÝ THÀNH VIÊN";
+            position: absolute;
+            top: 0px; /* Đặt tiêu đề phía trên khung */
+            left: 50%; /* Căn giữa tiêu đề */
+            transform: translateX(-50%);
+            background-color: #fff; /* Màu nền trắng cho tiêu đề */
+            color: black; /* Màu chữ */
+            padding: 10px;
+            font-weight: bold;
+            font-size: 1.05em;
+            border-radius: 8px 8px 0 0; /* Bo góc cho tiêu đề */
+        }
+
+        .container, .login-info {
+            position: relative; /* Để ::before hoạt động đúng */
+            margin-bottom: 15px; /* Khoảng cách giữa thông tin cá nhân và thông tin đăng nhập */
+            width: 100%;
+            border: 2px solid #333;
+            padding: 20px;
+            box-sizing: border-box;
+            line-height: 1.75; /* Tăng khoảng cách giữa các dòng */
+        }
+
+        .container::before {
+            content: "Thông tin cá nhân";
+            position: absolute;
+            top: -20px;
+            left: 10px; /* Đặt chữ ở bên trái */
+            background-color: #fff;
+            padding: 0;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .login-info::before {
+            content: "Thông tin đăng nhập";
+            position: absolute;
+            top: -15px;
+            left: 10px; /* Đặt chữ ở bên trái */
+            background-color: #fff;
+            padding: 0;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #666;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .input-wide {
+            width: 100px;
+        }
+
+        .input-widee {
+            width: 200px;
+        }
+
+        .input-year {
+            width: 18%;
+        }
+
+        .textarea-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            max-width: 250px;
+            height: 50px;
+            line-height: 1.5;
+        }
+
+        .textarea-container label {
+            margin-right: 25px;
+        }
+
+        .input-phone, .input-email {
+            width: 245px;
+        }
+        .button-container {
+            text-align: 40px;
+            margin-top: -20px; /* Di chuyển các nút lên trên */
+        }
+
+        .button-container input[type="submit"] {
+            margin: 10px 0px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm_password').value;
+
+            if (!username || !password || !confirmPassword) {
+                alert("Tên đăng nhập, mật khẩu và nhập lại mật khẩu không được rỗng!");
+                return false; // Prevent form submission
+            }
+
+            return true; // Allow form submission
+        }
+    </script>
+</head>
+<body>
+    <div class="outer-container">
+        <br>
+        <br>
+        <div class="container">
+            <table>
+                <tr>
+                    Họ và tên:&nbsp;&nbsp;&nbsp;<input type="text" name="user_id" class="input-wide"/><br>
+                    Ngày sinh:&nbsp;&nbsp;<label for="day"></label>
+                    <select id="day" name="day">
+                        <!-- Sử dụng JavaScript để tự động tạo các tùy chọn từ 01 đến 31 -->
+                        <script>
+                            for (let i = 1; i <= 31; i++) {
+                                let day = i < 10 ? '0' + i : i; // Thêm số 0 trước những ngày nhỏ hơn 10
+                                document.write('<option value="' + day + '">' + day + '</option>');
+                            }
+                        </script>
+    
+                    </select>
+                    &nbsp;<label for="month">Tháng:</label>
+        <select id="month" name="month">
+            <!-- Sử dụng JavaScript để tự động tạo các tùy chọn từ 01 đến 12 -->
+            <script>
+                for (let i = 1; i <= 12; i++) {
+                    let month = i < 10 ? '0' + i : i; // Thêm số 0 trước những tháng nhỏ hơn 10
+                    document.write('<option value="' + month + '">' + month + '</option>');
+                }
+            </script>
+        </select>
+        &nbsp;&nbsp; Năm:<input type="text" name="year" class="input-year"/>
+            <br>
+            Giới tính: &nbsp;<label>
+                <input type="radio" name="gender" value="male" checked> Nam
+              </label>
+              <label>
+                <input type="radio" name="gender" value="female"> Nữ
+              </label><br>
+              <div class="textarea-container">
+            <label for="address">Địa&nbsp;chỉ:</label><textarea id="address"></textarea>
+                </div>
+            Điện thoại:&nbsp;<input type="number" name="phone" class="input-phone"/><br>
+            Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="email" name="email" class="input-email"/>
+                </tr>
+            </table>
+        </div> 
+        <div class="login-info">
+            <table>
+                <tr>
+                    Tên đăng nhập:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" id="username" name="username" class="input-widee"/><br>
+                    Mật khẩu:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" id="password" name="password" class="input-widee"/><br>
+                    Nhập lại mật khẩu:&nbsp;<input type="password" id="confirm_password" name="confirm_password" class="input-widee"/><br>
+                </tr>
+            </table>
+        </div>
+        <div class="button-container">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" name="dangki" value="Đăng kí" onclick="return validateForm()">
+        <input type="submit" name="cancle" value="Hủy">
+        </div>
+    </div>
+</body>
+</html>

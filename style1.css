@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+.right-section{
+    background-color: lightgrey;
+    border: 1px solid blue;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-sizing: border-box; /* Đảm bảo tổng kích thước không thay đổi */
+    width:250px;
+    box-shadow: 0px 3px 0px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+    .right-section h2 {
+        font-size: 20px; /* Adjust the size as needed */
+        box-sizing: border-box;
+    }
+    .book-container {
+        display: flex;
+        flex-direction: column;
+        animation: scrollUp 10s linear infinite;
+    }
+
+.popular-books, .website-links, .statistics {
+    background-color: #dce6f1;
+    border: 1px solid blue;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-sizing: border-box; /* Đảm bảo tổng kích thước không thay đổi */
+    width:fit-content;
+    box-shadow: 0px 3px 0px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+}
+
+h2 {
+    background-color: #3468af;
+    color: white;
+    margin: 0;
+    border-radius: 5px 5px 0 0;
+    padding:20px;
+    font-weight: bold;
+    
+}
+
+.book-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.book-item img {
+    width: 80px;
+    height: 90px;
+    margin-right: 10px;
+}
+
+.book-item a {
+    color: #007bff;
+    font-size: 14px;
+}
+
+/* Định dạng phần LIÊN KẾT WEBSITE */
+.website-links {
+    background-color: lightgrey;
+    color: white;
+    margin-bottom: 5px;
+    width:250px;
+}
+
+.website-links h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.website-links select {
+    width: 80%;
+}
+
+/* Định dạng phần THỐNG KÊ TRUY CẬP */
+.statistics {
+    background-color: lightgrey;
+    color: rgb(10, 9, 9);
+    margin-bottom: 5px;
+    width:250px;
+}
+
+.statistics h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.statistics p {
+    margin: 5px 0;
+}
+@keyframes scrollUp {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}

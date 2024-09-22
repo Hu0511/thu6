@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        table{
+            border-collapse: collapse;
+            width: 30%;
+            margin: auto;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: left;
+            color:black;
+        }
+        th{
+            text-align: center;
+            vertical-align: middle;
+        }
+        .text1{
+            width:230px;
+        }
+        .custom-submit {
+            background-color: #DCDCDC;
+            color: black;
+            padding: 5px 2px;
+            border: none;
+            cursor: pointer;
+            border-radius: 3px; /* Rounding corners */
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adding shadow */
+        }
+        input{
+            border: 2px solid black; /* Đặt độ dày và màu sắc của viền */
+            
+        } 
+        .line3{
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th colspan="2"><b>ĐĂNG NHẬP</b></th>
+        <tr>
+            <td>Tên đăng nhập:</td>
+            <td class="text1"><input type="text" name="user_id" class="text1"/></td>
+        </tr>
+        <tr>
+            <td>Mật khẩu</td>
+            <td class="text1"><input type="password" name="password" class="text1"></td>
+        </tr>
+        <tr>
+           <th colspan="2"><input type="submit" class="custom-submit" value="Đăng nhập"></th>
+        </tr>
+        <tr>
+            <td colspan="2" class="line3"><a href="#"><i>Đổi mật khẩu</i></a></td>
+        </tr>
+    </table>
+</body>
+</html>

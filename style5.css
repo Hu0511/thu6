@@ -1,0 +1,48 @@
+/* Quy định chung cho header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f2f2f2;
+}
+
+/* Quy định cho khối logo */
+.logo img {
+    max-width: 700px;
+    height: auto;
+}
+
+/* Quy định cho khối chứa các liên kết */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 15px;
+}
+
+.nav-links a {
+    color: blue;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a i {
+    margin-right: 5px;
+    font-size: 20px;
+    color: blue;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #007bff;
+}
+
+.nav-links a i:hover {
+    color: #007bff;
+}
+.cart-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}

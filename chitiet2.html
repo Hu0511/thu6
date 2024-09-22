@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        table {
+            border-collapse: collapse; /* Xóa khoảng cách giữa các ô */
+            width: 40%; /* Chiều rộng của bảng */
+        }
+        th, td {
+            border: 2px solid black; /* Viền cho các ô */
+            padding: 8px; /* Khoảng cách giữa viền và nội dung */
+            text-align: left; /* Căn lề nội dung */
+        }
+        th{
+            text-align: center;
+            vertical-align: middle;
+            font-size:1.5em; 
+        }
+        img {
+            display: block;
+            margin: 0 auto; /* Căn giữa ảnh theo chiều ngang */
+            max-width: 100%; /* Đảm bảo ảnh không vượt quá kích thước của phần tử bao bọc */
+            height: auto; /* Giữ tỷ lệ khung hình của ảnh */
+        }
+        .small-cell {
+            width: 200px; /* Chiều rộng cố định cho ô */
+            height: 200px; /* Chiều cao cố định cho ô */
+        }
+        .line-spacing-1{
+            line-height:3;
+        }
+        .buy-button {
+            background-color: white; /* Change background to white */
+            color: orange; /* Text color */
+            border: 2px solid orange; /* Orange border */
+            font-size: 14px;
+            align-items: center;
+            cursor: pointer;
+            text-align: right;
+            display:inline-flex;
+            box-sizing: border-box;
+            border-radius: 8px; /* Rounding corners */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adding shadow */
+        }
+        .buy-button:hover {
+            background-color: lightgray; /* Subtle hover effect */
+            text-align: right;
+        }
+        .cart-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+        .line2{
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr bgcolor="#f5a3f5">
+            <th colspan="2" style="color:#0000FF">TOÁN 3</th>
+
+        </tr>
+        <tr>
+            <td rowspan="6" class="small-cell"><img src="https://sytu.vn//images/bookimg/sgk-toan-3-tap-lop-1-canh-dieu-80.jpg" alt="Ảnh"></td>
+            <td>Tác giả: <i>Nguyễn Minh Tuyết</i></td>
+        </tr>
+        <tr>
+            <td>Đồng tác giả: <i>Chu Thị Thúy An</i></td>
+        </tr>
+        <tr>
+            <td>Hiệu đinh: <i>Phan Thị Hồ Điệp</i></td>
+        </tr>
+        <tr>
+
+            <td>Chủ biên: <i>Trần Mạnh Cường</i></td>
+        </tr>
+        <tr>
+            <td>Nhà xuất bản: <b style="color: red;">Nhà xuất bản Đại học Sư phạm TP Hồ Chí Minh</td>
+        </tr>
+        <tr>
+            <td>Chủ đề: <b style="color: red">Toán học</b></td>
+        </tr>
+        <tr>
+            <td colspan="2"> 
+            <b class="line-spacing-1">Nội dung của cuốn:</b>
+            <br>
+            Toán 3 Tập 1 Cánh diều gồm có 7 chương:<br>
+            Chương 1: Số tự nhiên .<br>
+            Chương 2: Ôn tập trong phạm vi 1000.<br>
+            Chương 3: ôn tập trong phạm vi 10000.<br>
+            Chương 4: Nhân một số với 2 chữ số.<br>
+            Chương 5: Chia với số có 2 chữ số.<br>
+            Chương 6: Làm quen với hình học.<br>
+            Chương 7: Bảng nhân 2.<br>
+            Xin trân trọng giới thiệu cuốn sách cùng bạn
+            </td>
+        </tr>
+        <tr>
+            <td class="line2" colspan="2">
+                <span class="price">Giá bán: <font color="red">26.000 VND/cuốn</font></span>
+            </td>
+        </tr>
+        <tr>
+            <td class="line2" colspan="2">
+                <button class="buy-button" >
+                    <img src="https://cdn.pixabay.com/photo/2014/04/02/10/53/shopping-cart-304843_1280.png" alt="Cart Icon" class="cart-icon"> ĐẶT MUA
+                </button>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
